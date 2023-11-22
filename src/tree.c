@@ -27,8 +27,13 @@ bool isEmptyTree(head__t *tree) {
     return (tree->root == NULL && tree->size == 0);
 }
 
-void insert(head__t *tree, void* data) {
-    if(!isEmptyTree(tree)) {
-        
+response__t* insert(head__t *tree, void* data) {
+    response__t *result = newInstance();
+    if(isEmptyTree(tree)) {
+
     }
+    else {
+
+    }
+    return result;
 }
