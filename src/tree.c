@@ -24,9 +24,11 @@ head__t* createTree(comparator cmp) {
 }
 
 bool isEmptyTree(head__t *tree) {
-    return !(NULL != tree && tree->root == NULL && tree->size == 0);
+    return (tree->root == NULL && tree->size == 0);
 }
 
-bool insert(head__t *tree, void* data) {
-    return NULL;
+void insert(head__t *tree, void* data) {
+    if(!isEmptyTree(tree)) {
+        
+    }
 }

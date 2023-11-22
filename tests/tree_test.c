@@ -25,5 +25,5 @@ Test(TreeTest, CreateTree, .init=setup, .fini=teardown) {
 }
 
 Test(TreeTest, isEmptyTree, .init=setup, .fini=teardown) {
-    cr_assert(isEmptyTree(tree) == false, "Tree must be empty"); 
+    cr_assert(isEmptyTree(tree) == true, "Tree must be empty"); 
 }

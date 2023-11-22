@@ -9,6 +9,6 @@ typedef int (*comparator)(void*, void*);
 
 head__t* createTree(comparator);
 bool isEmptyTree(head__t*);
-bool insert(head__t*, void*);
+void insert(head__t*, void*);
 
 #endif
