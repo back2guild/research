@@ -20,6 +20,9 @@ head__t* createTree(comparator cmp) {
         tree->size = 0;
         tree->compare = cmp;
     }
+    else {
+        perror("ERROR: failed to create tree\n");
+    }
     return tree;
 }
 
@@ -34,6 +37,19 @@ response__t* insert(head__t *tree, void* data) {
     }
     else {
 
+    }
+    return result;
+}
+
+node__t* createNode(void *data, node__t *leftNode, node__t *rightNode) {
+    node__t *result = (node__t*) malloc(sizeof(node__t));
+    if(result) {    
+        result->data = data;
+        result->left = leftNode;
+        result->right = rightNode;
+    }
+    else {
+        perror("ERROR: failed to create tree\n");
     }
     return result;
 }

@@ -8,6 +8,7 @@ typedef struct TreeNode node__t;
 typedef int (*comparator)(void*, void*);
 
 head__t* createTree(comparator);
+node__t* createNode(void*, node__t*, node__t*);
 bool isEmptyTree(head__t*);
 response__t* insert(head__t*, void*);
 
