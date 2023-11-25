@@ -6,14 +6,6 @@
 #include <assert.h>
 #include <stdint.h>
 #include <stdbool.h>
-
-#define DEFAULT_MESSAGE_LENGTH 256
-typedef struct Response response__t;
-enum ResponseStatus {
-    SUCCESS,
-    ERROR
-};
-
-response__t* newInstance(void);
+#include <string.h>
 
 #endif
