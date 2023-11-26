@@ -37,6 +37,34 @@ void* __getData(struct Response *this) {
     return this->data;
 }
 
+
+void setStatus(response__t *res,enum ResponseStatus status) {
+    res->setStatus(res, status);
+}
+
+void setText(response__t *res, char *text) {
+    res->setText(res,text);
+}
+
+
+void setData(response__t *res, void *data) {
+    res->setData(res, data);
+}
+
+enum ResponseStatus getStatus(response__t *res) {
+    return res->getStatus(res);
+}
+
+
+char* getText(response__t *res) {
+    return res->getText(res);
+}
+
+
+void* getData(response__t *res) {
+    return res->getData;
+}
+
 response__t* newInstance(void) {
     response__t *result = (response__t*) malloc(sizeof(response__t));
     if(!result)

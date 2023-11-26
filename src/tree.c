@@ -26,17 +26,6 @@ head__t* createTree(comparator cmp) {
     return tree;
 }
 
-node__t* createNode(void*, node__t*, node__t*) {
-    node__t *node = (node__t*) malloc(sizeof(node__t));
-    if(node) {
-        printf("ABCD");
-    }
-    else {
-        printf("ABCD");
-    }
-    return node;
-}
-
 bool isEmptyTree(head__t *tree) {
     return (tree->root == NULL && tree->size == 0);
 }
