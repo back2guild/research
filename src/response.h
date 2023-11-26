@@ -26,6 +26,7 @@
     char* getResponseText(struct Response*);
     void* getResponseData(struct Response*);
 
-    response__t* newInstance(void);
+    response__t* createResponse(void);
     bool isResponseSuccess(response__t*);
+    void destroyResponse(response__t*);
 #endif

@@ -68,7 +68,7 @@ void* getResponseData(response__t *res) {
     return res->getData;
 }
 
-response__t* newInstance(void) {
+response__t* createResponse(void) {
     response__t *result = (response__t*) malloc(sizeof(response__t));
     if(!result)
     {
@@ -89,4 +89,14 @@ response__t* newInstance(void) {
 bool isResponseSuccess(response__t *res) {
     assert(res != NULL);
     return (getResponseStatus(res) == SUCCESS && !strcmp(getResponseText(res), RESPONSE_STATUS_SUCCESS));
+}
+
+void destroyResponse(response__t *res) {
+    if(res) {
+        if(getResponseData(res) != NULL) {
+            free(getResponseData(res));
+            free(res);
+            res = NULL;
+        }
+    }
 }
