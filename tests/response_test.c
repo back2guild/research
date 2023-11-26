@@ -8,7 +8,7 @@ Test(ResponseTest, TestNewInstance) {
 
 Test(ResponseTest, TestResponseStatusWithNull) {
     response__t *res = newInstance();
-    res->setStatus(res,SUCCESS);
-    res->setText(res,RESPONSE_STATUS_SUCCESS);
-    assert(isResponseSuccess(res) == true);
+    setResponseStatus(res,SUCCESS);
+    setResponseText(res,RESPONSE_STATUS_SUCCESS);
+    cr_assert(isResponseSuccess(res) == true);
 }
