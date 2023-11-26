@@ -16,8 +16,10 @@ jobs:
       with:
         fetch-depth: 1
     - name: criterion
-      run: sudo apt-get install libcriterion-dev -y
+      run: sudo apt-get install libcriterion-dev valgrind -y
     - name: make
       run: make
     - name: make test
       run: make test
+    - name: leak
+      run make leak

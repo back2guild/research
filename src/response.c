@@ -92,5 +92,11 @@ bool isResponseSuccess(response__t *res) {
 }
 
 void destroyResponse(response__t *res) {
-    
+    if(res) {
+        if(getResponseData(res) != NULL) {
+            free(getResponseData(res));
+            free(res);
+            res = NULL;
+        }
+    }
 }

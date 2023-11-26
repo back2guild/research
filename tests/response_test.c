@@ -9,13 +9,7 @@ void setup() {
 }
 
 void teardown() {
-    if(res) {
-        if(getResponseData(res) != NULL) {
-            free(getResponseData(res));
-            free(res);
-            res = NULL;
-        }
-    }
+    destroyResponse(res);
 }
 
 Test(ResponseTest, TestNewInstance, .init = setup, .fini= teardown) {
