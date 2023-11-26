@@ -2,9 +2,12 @@
 #include "response.h"
 
 struct Response {
+    // properties
     enum ResponseStatus status;
     char *text;
     void *data;
+
+    //actions
     void (*setStatus)(struct Response*,enum ResponseStatus);
     void (*setText)(struct Response*, char *text);
     void (*setData)(struct Response*, void *data);
@@ -38,30 +41,30 @@ void* __getData(struct Response *this) {
 }
 
 
-void setStatus(response__t *res,enum ResponseStatus status) {
+void setResponseStatus(response__t *res,enum ResponseStatus status) {
     res->setStatus(res, status);
 }
 
-void setText(response__t *res, char *text) {
+void setResponseText(response__t *res, char *text) {
     res->setText(res,text);
 }
 
 
-void setData(response__t *res, void *data) {
+void setResponseData(response__t *res, void *data) {
     res->setData(res, data);
 }
 
-enum ResponseStatus getStatus(response__t *res) {
+enum ResponseStatus getResponseStatus(response__t *res) {
     return res->getStatus(res);
 }
 
 
-char* getText(response__t *res) {
+char* getResponseText(response__t *res) {
     return res->getText(res);
 }
 
 
-void* getData(response__t *res) {
+void* getResponseData(response__t *res) {
     return res->getData;
 }
 
@@ -85,6 +88,5 @@ response__t* newInstance(void) {
 
 bool isResponseSuccess(response__t *res) {
     assert(res != NULL);
-    bool status = false;
-    return status; 
+    return (getResponseStatus(res) == SUCCESS && !strcmp(getResponseText(res), RESPONSE_STATUS_SUCCESS));
 }

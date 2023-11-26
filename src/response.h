@@ -12,12 +12,19 @@
         NONE
     };
 
-    void setStatus(response__t*,enum ResponseStatus);
-    void setText(response__t*, char *text);
-    void setData(response__t*, void *data);
-    enum ResponseStatus getStatus(response__t*);
-    char* getText(struct Response*);
-    void* getData(struct Response*);
+    //typedef void (*setStatus)(struct Response*,enum ResponseStatus) SetStatus;
+    //typedef void (*setText)(struct Response*, char *text) SetText;
+    //typedef void (*setData)(struct Response*, void *data) SetData;
+    //typedef enum ResponseStatus (*getStatus)(struct Response*) GetStatus;
+    //typedef char* (*getText)(struct Response*) GetText;
+    //typedef void* (*getData)(struct Response*) GetData;
+
+    void setResponseStatus(response__t*,enum ResponseStatus);
+    void setResponseText(response__t*, char *text);
+    void setResponseData(response__t*, void *data);
+    enum ResponseStatus getResponseStatus(response__t*);
+    char* getResponseText(struct Response*);
+    void* getResponseData(struct Response*);
 
     response__t* newInstance(void);
     bool isResponseSuccess(response__t*);
