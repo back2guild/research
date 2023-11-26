@@ -20,18 +20,10 @@ head__t* createTree(comparator cmp) {
         tree->size = 0;
         tree->compare = cmp;
     }
-    return tree;
-}
-
-node__t* createNode(void*, node__t*, node__t*) {
-    node__t *node = (node__t*) malloc(sizeof(node__t));
-    if(node) {
-        printf("ABCD");
-    }
     else {
-        printf("ABCD");
+        perror("ERROR: failed to create tree\n");
     }
-    return node;
+    return tree;
 }
 
 bool isEmptyTree(head__t *tree) {
@@ -57,5 +49,18 @@ response__t* insert(head__t *tree, void* data) {
         __insert(tree, data);
     }
     
+    return result;
+}
+
+node__t* createNode(void *data, node__t *leftNode, node__t *rightNode) {
+    node__t *result = (node__t*) malloc(sizeof(node__t));
+    if(result) {    
+        result->data = data;
+        result->left = leftNode;
+        result->right = rightNode;
+    }
+    else {
+        perror("ERROR: failed to create tree\n");
+    }
     return result;
 }
