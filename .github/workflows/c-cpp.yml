@@ -22,4 +22,4 @@ jobs:
     - name: make test
       run: make test
     - name: leak
-      run make leak
+      run: make leak
