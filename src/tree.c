@@ -45,7 +45,7 @@ void __insert(head__t *tree, void *data) {
 response__t* insert(head__t *tree, void* data) {
     response__t *result = NULL;
     if(tree) {
-        result = newInstance();
+        result = createResponse();
         __insert(tree, data);
     }
     
